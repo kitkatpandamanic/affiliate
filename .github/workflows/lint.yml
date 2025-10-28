@@ -1,0 +1,14 @@
+name: Lint HTML, CSS, JS
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+    - name: Lint HTML, CSS, JS
+      uses: andreiio/html-linter-action@v1.0.6
+      with:
+        options: "--exclude node_modules --format stylish"
